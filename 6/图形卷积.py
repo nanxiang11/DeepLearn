@@ -64,6 +64,8 @@ Y = Y.reshape((1, 1, 6, 7))
 # print(X)
 lr = 3e-2
 
+# 这里要先声明一下这里的Y是原来通过conv2d互相关运算计算出来了
+# 之前也设定了相关的卷积核k[1, -1]，所以这里是相当于反推k
 for i in range(10):
     Y_hat = conv2d(X)
     l = (Y_hat - Y) ** 2
